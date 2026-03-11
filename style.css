@@ -1,0 +1,76 @@
+# Lead Allocation Dashboard
+
+A fully client-side CRM intelligence dashboard for tracking and managing leads.
+No backend or database required — runs entirely in the browser.
+
+---
+
+## 📁 Project Structure
+
+```
+lead-dashboard/
+├── index.html          ← Main HTML (entry point)
+├── css/
+│   └── style.css       ← All styles, variables, responsive layout
+├── js/
+│   ├── data.js         ← Seed lead data + shared utilities (getStatusType, countBy)
+│   ├── charts.js       ← KPI cards, bar charts, SVG donut, conversion meter
+│   ├── table.js        ← Table rendering, filters, inline status update, CSV export
+│   ├── modal.js        ← Add / Edit lead modal, form validation
+│   └── app.js          ← Entry point, tab switching, renderAll()
+└── README.md
+```
+
+---
+
+## ✨ Features
+
+- **Dashboard tab** — KPI cards, leads by country/trainer, SVG donut status chart, conversion by trainer, leads by month
+- **All Leads tab** — searchable, filterable table with inline status updates
+- **Add / Edit** — full modal form for all lead fields
+- **Delete** leads with confirmation
+- **Export CSV** — download all leads as a spreadsheet-ready file
+- **Statuses** — Converted ✓, In Progress ⏳, Closed ✖, No Status
+- Fully **responsive** — works on desktop, tablet, mobile
+- **Sticky topbar** with tab navigation
+
+---
+
+## 🚀 How to Deploy
+
+### Option 1 — Open Locally (no server needed)
+Just double-click `index.html` in your file explorer. Opens directly in any browser.
+
+### Option 2 — Netlify Drop (free, instant public URL)
+1. Go to [app.netlify.com/drop](https://app.netlify.com/drop)
+2. Drag the entire `lead-dashboard/` folder onto the page
+3. Get a live public URL in ~30 seconds
+
+### Option 3 — GitHub Pages (free, permanent)
+1. Create a new GitHub repository
+2. Upload all files (maintaining the folder structure)
+3. Go to **Settings → Pages → Branch: main → Save**
+4. Your site will be live at `https://yourusername.github.io/repo-name`
+
+### Option 4 — Any Static Host
+Upload the folder to Vercel, Cloudflare Pages, or any web host.
+No build step or server required.
+
+---
+
+## 🛠 Customisation
+
+| What                        | Where                        |
+|-----------------------------|------------------------------|
+| Add/edit lead data          | `js/data.js` → `leads` array |
+| Change colours/fonts        | `css/style.css` → `:root`    |
+| Add new chart               | `js/charts.js`               |
+| Add new table column        | `js/table.js` + `index.html` |
+| Add new status type         | `js/data.js` → `getStatusType()` + all dropdowns |
+
+---
+
+## 📦 Dependencies
+
+- [Google Fonts — Syne + DM Sans](https://fonts.google.com/) (loaded via CDN, requires internet)
+- No npm, no build tools, no frameworks — plain HTML/CSS/JS only
